@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: 2px solid #fff;
+  background: transparent;
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background: #fff;
+  color: #1f2937;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: #4f46e5;
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #4338ca;
+}
