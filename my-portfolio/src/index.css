@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #0b0f19;
+  --bg-primary: #0b1220;
+  --bg-alt: #0f172a;
   --bg-secondary: #111827;
   --bg-card: #1f2937;
   --accent: #6366f1;
+  --accent-2: #8b5cf6;
+  --accent-soft: #22d3ee;
   --accent-hover: #818cf8;
-  --text-primary: #f9fafb;
+  --text-primary: #e5e7eb;
   --text-secondary: #9ca3af;
   --border: #374151;
 }
@@ -29,6 +32,43 @@ body {
   line-height: 1.6;
 }
 
+.app-grid {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: grid-float 22s linear infinite;
+}
+
+.section-tone-a {
+  background-color: #0b1220;
+}
+
+.section-tone-b {
+  background-color: #0f172a;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes grid-float {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 40px 40px, 40px 40px;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -47,4 +87,16 @@ pre,
 
 * {
   box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-grid {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import profileImage from './assets/hack1.jpg';
 
 const HERO = {
@@ -218,88 +219,112 @@ const WRITING = {
   paperHref: '/Szitenhelm_Wiktoria.pdf',
 };
 
-const sectionClass = 'mx-auto w-full max-w-[1200px] px-6 py-[100px]';
+const sectionClass = 'reveal mx-auto w-full max-w-[1200px] px-6 py-[100px]';
 const cardClass =
-  'rounded-xl border border-[#374151] bg-[#1F2937] p-6 transition-colors duration-200 hover:border-[#6366F1]';
+  'rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[#111827] p-6 [transition:all_0.25s_ease] hover:-translate-y-1 hover:border-[rgba(99,102,241,0.4)] hover:bg-[#1F2937] hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]';
+const primaryButtonClass =
+  'rounded-lg bg-[linear-gradient(135deg,#6366F1,#8B5CF6)] px-6 py-3 font-medium text-white [transition:all_0.25s_ease] hover:-translate-y-0.5 hover:shadow-[0_10px_25px_rgba(99,102,241,0.35)]';
+const secondaryButtonClass =
+  'rounded-lg border border-[rgba(255,255,255,0.15)] bg-transparent px-6 py-3 font-medium text-[#E5E7EB] [transition:all_0.25s_ease] hover:-translate-y-0.5 hover:border-[#6366F1] hover:bg-[rgba(99,102,241,0.1)]';
 
 export default function Home() {
+  useEffect(() => {
+    const elements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
-      <section className={`${sectionClass} pb-16`}>
-        <div className="rounded-2xl border border-[#374151] bg-[#111827] p-10">
-          <h1 className="text-4xl font-bold leading-tight text-[#F9FAFB] md:text-6xl">{HERO.name}</h1>
-          <p className="mt-4 text-xl font-semibold text-[#818CF8] md:text-2xl">{HERO.title}</p>
-          <p className="mt-6 max-w-4xl text-lg leading-relaxed text-[#9CA3AF]">{HERO.subtitle}</p>
+      <section className={`${sectionClass} section-tone-a relative overflow-hidden pb-16`}>
+        <div className="pointer-events-none absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.22),transparent_60%)] blur-2xl" />
+        <div className="relative rounded-2xl border border-[rgba(99,102,241,0.25)] bg-[#111827] p-12 shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+          <h1 className="text-5xl font-bold leading-tight text-[#E5E7EB] md:text-[56px]">{HERO.name}</h1>
+          <p className="mt-4 text-xl font-semibold md:text-2xl bg-[linear-gradient(90deg,#6366F1,#22D3EE)] bg-clip-text text-transparent">
+            {HERO.title}
+          </p>
+          <p className="mt-6 max-w-4xl text-base leading-[1.6] text-[#9CA3AF]">{HERO.subtitle}</p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#projects" className="rounded-lg bg-[#6366F1] px-6 py-3 font-medium text-white transition-colors hover:bg-[#818CF8]">
+            <a href="#projects" className={primaryButtonClass}>
               View Projects
             </a>
             <a
               href="https://github.com/wszitenhelm"
               target="_blank"
               rel="noreferrer"
-              className="rounded-lg border border-[#374151] bg-transparent px-6 py-3 font-medium text-[#F9FAFB] transition-colors hover:border-[#818CF8] hover:text-[#818CF8]"
+              className={secondaryButtonClass}
             >
               GitHub
             </a>
             <a
               href="/cv-wiktoria-szitenhelm.pdf"
               download
-              className="rounded-lg border border-[#374151] bg-transparent px-6 py-3 font-medium text-[#F9FAFB] transition-colors hover:border-[#818CF8] hover:text-[#818CF8]"
+              className={secondaryButtonClass}
             >
               Download CV
             </a>
-            <a href="#contact" className="rounded-lg border border-[#374151] bg-transparent px-6 py-3 font-medium text-[#F9FAFB] transition-colors hover:border-[#818CF8] hover:text-[#818CF8]">
+            <a href="#contact" className={secondaryButtonClass}>
               Contact
             </a>
           </div>
         </div>
       </section>
 
-      <section className={`${sectionClass} pt-0`}>
-        <h2 className="text-3xl font-bold text-[#F9FAFB]">Engineering Snapshot</h2>
+      <section className={`${sectionClass} section-tone-b pt-0`}>
+        <h2 className="text-[32px] font-bold text-[#E5E7EB]">Engineering Snapshot</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {SNAPSHOT.map((item) => (
             <article key={item.title} className={cardClass}>
-              <h3 className="text-lg font-semibold text-[#F9FAFB]">{item.title}</h3>
+              <h3 className="text-xl font-semibold text-[#E5E7EB]">{item.title}</h3>
               {item.bullets ? (
-                <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[#9CA3AF]">
+                <ul className="mt-3 space-y-2 text-base leading-[1.6] text-[#9CA3AF]">
                   {item.bullets.map((bullet) => (
                     <li key={bullet}>• {bullet}</li>
                   ))}
                 </ul>
               ) : (
-                <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-[#9CA3AF]">{item.body}</p>
+                <p className="mt-3 whitespace-pre-line text-base leading-[1.6] text-[#9CA3AF]">{item.body}</p>
               )}
             </article>
           ))}
         </div>
       </section>
 
-      <section className={sectionClass} id="about">
-        <h2 className="text-3xl font-bold text-[#F9FAFB]">About</h2>
+      <section className={`${sectionClass} section-tone-a`} id="about">
+        <h2 className="text-[32px] font-bold text-[#E5E7EB]">About</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-[30%_70%] md:items-start">
           <div className="flex justify-center md:justify-start">
             <img
               src={profileImage}
               alt="Wiktoria Szitenhelm"
-              className="h-[280px] w-[280px] rounded-full border border-[#374151] object-cover"
+              className="h-[280px] w-[280px] rounded-full border-[3px] border-[rgba(99,102,241,0.4)] object-cover shadow-[0_0_40px_rgba(99,102,241,0.35)]"
             />
           </div>
-          <div className="rounded-xl border border-[#374151] bg-[#1F2937] p-4 text-[#9CA3AF]">
-            <p className="text-sm leading-relaxed">
+          <div className="rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[#111827] p-4 text-[#9CA3AF] [transition:all_0.25s_ease] hover:border-[rgba(99,102,241,0.4)] hover:bg-[#1F2937]">
+            <p className="text-base leading-[1.6]">
               I’m a blockchain engineer specialising in smart contracts, cross-chain communication, and distributed systems.
             </p>
-            <p className="mt-4 text-sm leading-relaxed">
+            <p className="mt-4 text-base leading-[1.6]">
               My work focuses on building secure on-chain logic, designing reliable execution flows, and implementing cryptographic security mechanisms within decentralized applications.
             </p>
-            <p className="mt-4 text-sm leading-relaxed">
+            <p className="mt-4 text-base leading-[1.6]">
               I have experience developing smart contracts on Ethereum and Solana, building cross-chain messaging prototypes, and implementing backend services and APIs in production environments.
             </p>
             <div className="mt-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#F9FAFB]">Engineering Interests</h3>
-              <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[#9CA3AF]">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#E5E7EB]">Engineering Interests</h3>
+              <ul className="mt-3 space-y-2 text-base leading-[1.6] text-[#9CA3AF]">
                 {INTERESTS.map((interest) => (
                   <li key={interest}>• {interest}</li>
                 ))}
@@ -309,34 +334,34 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={sectionClass} id="vision">
-        <h2 className="text-3xl font-bold text-[#F9FAFB]">Engineering Approach</h2>
+      <section className={`${sectionClass} section-tone-b`} id="vision">
+        <h2 className="text-[32px] font-bold text-[#E5E7EB]">Engineering Approach</h2>
         <p className="mt-4 text-[#9CA3AF]">Focus on deterministic, secure systems.</p>
         <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {APPROACH.map((principle) => (
             <article key={principle.title} className={cardClass}>
-              <h3 className="font-semibold text-[#F9FAFB]">{principle.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-[#9CA3AF]">{principle.body}</p>
+              <h3 className="text-xl font-semibold text-[#E5E7EB]">{principle.title}</h3>
+              <p className="mt-3 text-base leading-[1.6] text-[#9CA3AF]">{principle.body}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className={sectionClass} id="experience">
-        <h2 className="text-3xl font-bold text-[#F9FAFB]">Work Experience</h2>
+      <section className={`${sectionClass} section-tone-a`} id="experience">
+        <h2 className="text-[32px] font-bold text-[#E5E7EB]">Work Experience</h2>
         <div className="mt-8 space-y-8">
           {EXPERIENCE.map((job) => (
             <article key={job.role} className={cardClass}>
-              <h3 className="text-2xl font-semibold text-[#F9FAFB]">{job.role}</h3>
+              <h3 className="text-xl font-semibold text-[#E5E7EB]">{job.role}</h3>
               <p className="mt-2 text-sm text-[#9CA3AF]">{job.meta}</p>
-              <p className="mt-5 leading-relaxed text-[#9CA3AF]">{job.summary}</p>
+              <p className="mt-5 text-base leading-[1.6] text-[#9CA3AF]">{job.summary}</p>
               {job.focusAreas && (
                 <p className="mt-4 text-sm font-medium text-[#818CF8]">{job.focusAreas}</p>
               )}
 
               <div className="mt-5 flex flex-wrap gap-2">
                 {job.stack.map((tech) => (
-                  <span key={tech} className="rounded-full border border-[#374151] bg-[#111827] px-3 py-1 text-xs text-[#9CA3AF]">
+                  <span key={tech} className="rounded-full border border-[rgba(99,102,241,0.25)] bg-[rgba(99,102,241,0.12)] px-[10px] py-[6px] text-[13px] text-[#C7D2FE] [transition:all_0.25s_ease] hover:bg-[rgba(99,102,241,0.2)]">
                     {tech}
                   </span>
                 ))}
@@ -345,33 +370,31 @@ export default function Home() {
               <h4 className="mt-6 text-sm font-semibold uppercase tracking-wide text-[#F9FAFB]">Key contributions</h4>
               <ul className="mt-4 space-y-3 text-[#9CA3AF]">
                 {job.bullets.map((item) => (
-                  <li key={item} className="leading-relaxed">
+                  <li key={item} className="text-base leading-[1.6]">
                     • {item}
                   </li>
                 ))}
               </ul>
 
-              <p className="mt-6 text-sm leading-relaxed text-[#9CA3AF]">{job.closing}</p>
+              <p className="mt-6 text-base leading-[1.6] text-[#9CA3AF]">{job.closing}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className={sectionClass} id="projects">
-        <h2 className="text-3xl font-bold text-[#F9FAFB]">Projects</h2>
+      <section className={`${sectionClass} section-tone-b`} id="projects">
+        <h2 className="text-[32px] font-bold text-[#E5E7EB]">Projects</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-2">
           {PROJECTS.map((project) => (
-            <article
-              key={project.title}
-              className={`${cardClass} border-l-4 border-l-[#6366F1] bg-gradient-to-b from-[#1F2937] to-[#111827]`}
-            >
-              <h3 className="text-xl font-semibold text-[#F9FAFB]">{project.title}</h3>
-              <p className="mt-3 inline-block rounded-full border border-[#374151] bg-[#111827] px-3 py-1 font-mono text-xs text-[#818CF8]">
+            <article key={project.title} className={cardClass}>
+              <div className="mb-4 h-[3px] w-full rounded-[3px] bg-[linear-gradient(90deg,#6366F1,#22D3EE)]" />
+              <h3 className="text-xl font-semibold text-[#E5E7EB]">{project.title}</h3>
+              <p className="mt-3 inline-block rounded-full border border-[rgba(99,102,241,0.25)] bg-[rgba(99,102,241,0.12)] px-[10px] py-[6px] font-mono text-[13px] text-[#C7D2FE] [transition:all_0.25s_ease] hover:bg-[rgba(99,102,241,0.2)]">
                 {project.stack}
               </p>
-              <p className="mt-4 leading-relaxed text-[#9CA3AF]">{project.description}</p>
+              <p className="mt-4 text-base leading-[1.6] text-[#9CA3AF]">{project.description}</p>
               {project.bullets.length > 0 && (
-                <ul className="mt-4 space-y-2 text-sm leading-relaxed text-[#9CA3AF]">
+                <ul className="mt-4 space-y-2 text-base leading-[1.6] text-[#9CA3AF]">
                   {project.bullets.map((item) => (
                     <li key={item}>• {item}</li>
                   ))}
@@ -395,15 +418,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={sectionClass} id="skills">
-        <h2 className="text-3xl font-bold text-[#F9FAFB]">Skills</h2>
+      <section className={`${sectionClass} section-tone-a`} id="skills">
+        <h2 className="text-[32px] font-bold text-[#E5E7EB]">Skills</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-2">
           {Object.entries(SKILLS).map(([group, items]) => (
             <article key={group} className={cardClass}>
-              <h3 className="text-lg font-semibold text-[#F9FAFB]">{group}</h3>
+              <h3 className="text-xl font-semibold text-[#E5E7EB]">{group}</h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {items.map((item) => (
-                  <span key={item} className="rounded-full border border-[#374151] bg-[#111827] px-3 py-1 text-xs text-[#9CA3AF]">
+                  <span key={item} className="rounded-full border border-[rgba(99,102,241,0.25)] bg-[rgba(99,102,241,0.12)] px-[10px] py-[6px] text-[13px] text-[#C7D2FE] [transition:all_0.25s_ease] hover:bg-[rgba(99,102,241,0.2)]">
                     {item}
                   </span>
                 ))}
@@ -413,22 +436,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={sectionClass} id="writing">
-        <h2 className="text-3xl font-bold text-[#F9FAFB]">Technical Writing</h2>
+      <section className={`${sectionClass} section-tone-b`} id="writing">
+        <h2 className="text-[32px] font-bold text-[#E5E7EB]">Technical Writing</h2>
         <article className={`${cardClass} mt-8`}>
-          <h3 className="text-xl font-semibold text-[#F9FAFB]">{WRITING.title}</h3>
-          <p className="mt-3 text-[#9CA3AF]">{WRITING.summary}</p>
-          <p className="mt-5 text-sm font-semibold uppercase tracking-wide text-[#F9FAFB]">
+          <h3 className="text-xl font-semibold text-[#E5E7EB]">{WRITING.title}</h3>
+          <p className="mt-3 text-base leading-[1.6] text-[#9CA3AF]">{WRITING.summary}</p>
+          <p className="mt-5 text-sm font-semibold uppercase tracking-wide text-[#E5E7EB]">
             Topics covered include
           </p>
-          <ul className="mt-3 space-y-2 text-sm text-[#9CA3AF]">
+          <ul className="mt-3 space-y-2 text-base leading-[1.6] text-[#9CA3AF]">
             {WRITING.topics.map((topic) => (
               <li key={topic}>• {topic}</li>
             ))}
           </ul>
-          <p className="mt-5 text-[#9CA3AF]">{WRITING.closing}</p>
+          <p className="mt-5 text-base leading-[1.6] text-[#9CA3AF]">{WRITING.closing}</p>
           <a
-            className="mt-6 inline-flex rounded-lg border border-[#374151] px-4 py-2 text-sm text-[#F9FAFB] transition-colors hover:border-[#818CF8] hover:text-[#818CF8]"
+            className="mt-6 inline-flex rounded-lg border border-[rgba(255,255,255,0.15)] px-4 py-2 text-sm text-[#E5E7EB] [transition:all_0.25s_ease] hover:-translate-y-0.5 hover:border-[#6366F1] hover:bg-[rgba(99,102,241,0.1)]"
             href={WRITING.paperHref}
             target="_blank"
             rel="noreferrer"
@@ -438,15 +461,15 @@ export default function Home() {
         </article>
       </section>
 
-      <section className={sectionClass} id="contact">
-        <h2 className="text-3xl font-bold text-[#F9FAFB]">Contact</h2>
-        <p className="mt-4 max-w-3xl leading-relaxed text-[#9CA3AF]">
+      <section className={`${sectionClass} section-tone-a`} id="contact">
+        <h2 className="text-[32px] font-bold text-[#E5E7EB]">Contact</h2>
+        <p className="mt-4 max-w-3xl text-base leading-[1.6] text-[#9CA3AF]">
           If you are working on blockchain protocols, smart contract systems, or cross-chain infrastructure and looking for engineers, feel free to reach out.
         </p>
 
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           <a className={cardClass} href="mailto:wiktoria.szitenhelm@gmail.com">
-            <h3 className="text-lg font-semibold text-[#F9FAFB]">Email</h3>
+            <h3 className="text-xl font-semibold text-[#E5E7EB]">Email</h3>
             <p className="mt-2 text-sm text-[#9CA3AF]">wiktoria.szitenhelm@gmail.com</p>
           </a>
           <a
@@ -455,11 +478,11 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
           >
-            <h3 className="text-lg font-semibold text-[#F9FAFB]">LinkedIn</h3>
+            <h3 className="text-xl font-semibold text-[#E5E7EB]">LinkedIn</h3>
             <p className="mt-2 text-sm text-[#9CA3AF]">linkedin.com/in/wszitenhelm</p>
           </a>
           <a className={cardClass} href="https://github.com/wszitenhelm" target="_blank" rel="noreferrer">
-            <h3 className="text-lg font-semibold text-[#F9FAFB]">GitHub</h3>
+            <h3 className="text-xl font-semibold text-[#E5E7EB]">GitHub</h3>
             <p className="mt-2 text-sm text-[#9CA3AF]">github.com/wszitenhelm</p>
           </a>
         </div>
