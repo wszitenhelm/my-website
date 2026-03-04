@@ -282,7 +282,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={`${sectionClass} section-tone-b pt-0`}>
+      <section className={`${sectionClass} section-tone-b`}>
         <h2 className="text-[32px] font-bold text-[#E5E7EB]">Engineering Snapshot</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {SNAPSHOT.map((item) => (
