@@ -5,16 +5,16 @@ import Home from './Home';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#0B0F19] text-[#F9FAFB]">
-        <header className="sticky top-0 z-50 border-b border-[#374151] bg-[#111827]/95 backdrop-blur">
+      <div className="app-grid min-h-screen bg-[#0B1220] text-[#E5E7EB]">
+        <header className="sticky top-0 z-50 border-b border-[rgba(255,255,255,0.08)] bg-[#0B1220]/85 backdrop-blur">
           <div className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-end px-6">
             <nav aria-label="Main navigation">
-              <ul className="flex items-center gap-6 text-base font-medium">
-                <li>
-                  <Link className="text-[#F9FAFB] transition-colors hover:text-[#818CF8]" to="/">
+              <ul className="flex items-center gap-6 text-base font-medium text-[#E5E7EB]">
+                {/* <li>
+                  <Link className="transition-colors hover:text-[#22D3EE]" to="/">
                     Home
                   </Link>
-                </li>
+                </li> */}
                 {/* <li>
                   <Link className="text-[#F9FAFB] transition-colors hover:text-[#818CF8]" to="/diary">
                     Diary
