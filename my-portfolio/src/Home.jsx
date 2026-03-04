@@ -219,7 +219,7 @@ const WRITING = {
   paperHref: '/Szitenhelm_Wiktoria.pdf',
 };
 
-const sectionClass = 'reveal mx-auto w-full max-w-[1200px] px-6 py-[100px]';
+const sectionClass = 'reveal mx-auto w-full max-w-[1200px] px-6 pt-[64px] pb-[100px]';
 const cardClass =
   'rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[#111827] p-6 [transition:all_0.25s_ease] hover:-translate-y-1 hover:border-[rgba(99,102,241,0.4)] hover:bg-[#1F2937] hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]';
 const primaryButtonClass =
