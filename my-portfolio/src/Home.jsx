@@ -269,7 +269,7 @@ export default function Home() {
               GitHub
             </a>
             <a
-              href="/cv-wiktoria-szitenhelm.pdf"
+              href="/SzitenhelmCV.pdf"
               download
               className={secondaryButtonClass}
             >
