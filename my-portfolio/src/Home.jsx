@@ -3,9 +3,9 @@ import profileImage from './assets/hack1.jpg';
 
 const HERO = {
   name: 'Wiktoria Szitenhelm',
-  title: 'Blockchain Engineer (Solidity + Rust / Cross-Chain Systems)',
+  title: 'Software Engineer',
   subtitle:
-    'I build secure smart contracts and cross-chain infrastructure across Ethereum and Solana, focusing on deterministic execution, cryptographic security mechanisms, and reliable on-chain state transitions.',
+    'I build reliable backend and full-stack software, with experience in Java, Python, TypeScript, distributed systems, and blockchain applications.',
 };
 
 const SNAPSHOT = [
@@ -15,14 +15,14 @@ const SNAPSHOT = [
   },
   {
     title: 'Languages',
-    body: 'Solidity · Rust (Anchor) · TypeScript',
+    body: 'Python · Java · TypeScript · Rust · Solidity',
   },
   {
     title: 'Focus areas',
     bullets: [
-      'Smart contract security mindset',
-      'Cross-chain infrastructure',
-      'Cryptographic validation',
+      'Backend and API engineering',
+      'Algorithms and systems programming',
+      'Applied AI, NLP, and product development',
     ],
   },
   {
@@ -56,32 +56,46 @@ const APPROACH = [
 
 const EXPERIENCE = [
   {
+    role: 'Mental Wellbeing Initiative - Founder',
+    meta: 'Remote | 02/2026 - Present',
+    stack: ['AI workflows', 'Product direction', 'User research', 'Technical architecture'],
+    summary:
+      'Building an AI-assisted wellbeing platform focused on adolescent mental health and emotional support.',
+    bullets: [
+      'Currently participating in a startup incubation program focused on early-stage product development.',
+      'Leading MVP planning, product direction, user research, and technical architecture.',
+      'Exploring AI-assisted workflows and conversational systems designed to support emotional wellbeing, healthy habits, and mental resilience.',
+    ],
+    closing:
+      'This work combines product thinking, technical planning, and user-centered software design in an early-stage startup environment.',
+  },
+  {
     role: 'Freelance Developer',
-    meta: 'Remote | 2025 – Present',
+    meta: 'Remote | 2025 - Present',
     stack: [
-      'Solidity',
-      'Rust (Anchor)',
-      'Ethereum',
-      'Solana',
-      'Cross-chain messaging',
       'Web integrations',
+      'Payments',
+      'Booking systems',
+      'Product delivery',
+      'Python',
+      'Software architecture',
     ],
     summary:
-      'Working independently on web development projects while continuing to deepen expertise in blockchain systems, smart contracts, and distributed architectures.',
+      'Working independently on web development projects while continuing to deepen expertise across software systems, integrations, product delivery, and selected distributed-system topics.',
     focusAreas:
-      'Focus areas: blockchain infrastructure, decentralized applications, and product development.',
+      'Focus areas: client delivery, product development, integrations, and technical exploration.',
     bullets: [
       'Delivered a production website for a wellness professional, including payment processing, newsletter subscriptions, and booking functionality (implemented using WordPress with custom integrations).',
       'Participated in blockchain hackathons, building decentralized application prototypes and exploring privacy-preserving interactions.',
-      'Conducted research and technical exploration related to smart contracts, distributed systems, and cross-chain infrastructure.',
+      'Conducted research and technical exploration related to distributed systems, software architecture, smart contracts, and product workflows.',
       'Worked on product strategy and MVP definition for a personal wellbeing startup exploring technology for mental health and self-reflection.',
-      'Continued developing skills in Solidity, Rust, and decentralized application architecture.',
+      'Continued developing skills in Python, Solidity, Rust, and software architecture across different stacks.',
     ],
     closing:
-      'Key activities include client work, participation in blockchain hackathons, and research and product design for a personal startup focused on digital wellbeing.',
+      'Key activities include client work, startup product definition, and hands-on engineering across both conventional software and emerging technical domains.',
   },
   {
-    role: 'Smart Contract Engineer — XSwap',
+    role: 'Smart Contract Engineer - XSwap',
     meta: 'Remote | 2025',
     stack: ['Rust (Anchor)', 'Solidity', 'Chainlink CCIP', 'TypeScript'],
     summary:
@@ -99,8 +113,8 @@ const EXPERIENCE = [
       'This work required understanding cross-chain messaging protocols, distributed system execution models, and secure smart contract architecture.',
   },
   {
-    role: 'Software Engineer — J.P. Morgan',
-    meta: 'Glasgow | 2023–2024',
+    role: 'Software Engineer - J.P. Morgan',
+    meta: 'Glasgow | 2023-2024',
     stack: ['React', 'Spring Boot', 'PostgreSQL', 'AWS', 'Terraform'],
     summary:
       'Worked on modernising a legacy enterprise system into a modern full-stack architecture used for financial workflows.',
@@ -119,6 +133,73 @@ const EXPERIENCE = [
 ];
 
 const PROJECTS = [
+  {
+    title: 'NLP Project (2024)',
+    stack: 'Python | spaCy | pandas | numpy | nltk | machine learning',
+    description:
+      'Used NLP techniques to analyze a dataset and solve language-processing tasks across classical and evaluation-focused workflows.',
+    bullets: [
+      'Extracted frequent words, verbs, POS tags, cosine similarity, perplexity, and correlation coefficient.',
+      'Trained a binary logistic regression classifier to predict accuracy.',
+      'Computed BLEU and BERTScore for model evaluation.',
+    ],
+    links: [],
+  },
+  {
+    title: 'Bubble Sort and Quicksort Time Performance Comparison (2024)',
+    stack: 'Algorithms | Performance analysis',
+    description:
+      'Compared the time performance of Bubble Sort and Quicksort to analyze algorithmic efficiency in practice.',
+    bullets: [
+      'Measured and compared runtime behavior across sorting strategies.',
+      'Used the project to reason about algorithm complexity and performance tradeoffs.',
+    ],
+    links: [],
+  },
+  {
+    title: 'Hash-cracking (2024)',
+    stack: 'Python | Security | Performance analysis',
+    description:
+      'Implemented password-hash search algorithms using brute force, dictionary attacks, salted-hash search, and rainbow tables.',
+    bullets: [
+      'Compared the performance of different cracking strategies.',
+      'Analyzed the impact of hashing strategies and salting on security.',
+    ],
+    links: [],
+  },
+  {
+    title: 'Virtual Disk (2022)',
+    stack: 'C | Systems programming | In-memory filesystem',
+    description:
+      'Implemented a simple virtual in-memory file system that manages files and directories and supports core file operations.',
+    bullets: [
+      'Added reading, writing, deleting, and metadata handling.',
+      'Focused on memory allocation, filesystem structure, and efficient data access patterns.',
+    ],
+    links: [],
+  },
+  {
+    title: 'Automated Planner (2022)',
+    stack: 'A* | Heuristics | Planning systems',
+    description:
+      'Implemented core planning-system functions including heuristic evaluation, plan validation, and A* search.',
+    bullets: [
+      'Built a heuristic function and a validator capable of checking a plan against a domain and a problem.',
+      'Implemented heuristic search with A*.',
+    ],
+    links: [],
+  },
+  {
+    title: 'Algorithmic Problem Solving - Moving Home (2022)',
+    stack: 'Optimization | 2D/3D packing | Algorithms',
+    description:
+      'Developed a program for 2D/3D truck packing with boxes of different sizes and positions for optimized unpacking through different human-chain strategies.',
+    bullets: [
+      'Modeled packing constraints and unloading logic algorithmically.',
+      'Focused on optimization and practical decision making.',
+    ],
+    links: [],
+  },
   {
     title: 'Solidity vs Rust in Smart Contract Development (2025)',
     stack: 'Solidity | Rust (Anchor) | JavaScript',
@@ -148,34 +229,12 @@ const PROJECTS = [
   },
   {
     title: 'Hackathons (2025)',
-    stack: 'dApp prototyping | Privacy | Blockchain hackathons',
+    stack: 'dApp prototyping | Privacy | Product engineering',
     description:
-      'Built decentralized hackathon prototypes with two separate tracks focused on practical web3 UX and privacy-preserving interactions.',
+      'Built decentralized hackathon prototypes with separate tracks focused on practical web3 UX and privacy-preserving interactions.',
     bullets: [
       'Base Bounty (2025): built a decentralized tutor-student matchmaking dApp.',
       'ZKPassport Bounty (2025): designed anonymous zero-knowledge form submission for privacy-preserving data interaction.',
-    ],
-    links: [],
-  },
-  {
-    title: 'Cryptography Project — Hash Cracking Experiments',
-    stack: 'Python | Security analysis | Cryptography',
-    description:
-      'Implemented multiple password-cracking strategies including brute-force, dictionary attacks, salted hashes, and rainbow tables in Python.',
-    bullets: [
-      'Benchmarked performance across attack methods.',
-      'Analyzed the impact of hashing strategies and salting on security outcomes.',
-    ],
-    links: [],
-  },
-  {
-    title: 'Virtual Disk Filesystem',
-    stack: 'C | Systems programming | Memory management',
-    description:
-      'Implemented an in-memory filesystem in C supporting file creation, directory management, read/write operations, and metadata handling.',
-    bullets: [
-      'Focused on filesystem structures and memory allocation.',
-      'Designed efficient data access patterns for core filesystem operations.',
     ],
     links: [],
   },
@@ -198,10 +257,10 @@ const SKILLS = {
 };
 
 const INTERESTS = [
-  'Protocol design',
-  'Cryptography in smart contracts',
-  'Cross-chain interoperability',
-  'Secure smart contract architecture',
+  'Backend and distributed systems',
+  'Applied AI and NLP',
+  'Algorithms and optimization',
+  'Developer tooling and product engineering',
 ];
 
 const WRITING = {
@@ -269,7 +328,7 @@ export default function Home() {
               GitHub
             </a>
             <a
-              href="/SzitenhelmCV.pdf"
+              href="/CV.pdf"
               download
               className={secondaryButtonClass}
             >
@@ -314,13 +373,16 @@ export default function Home() {
           </div>
           <div className="rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[#111827] p-4 text-[#9CA3AF] [transition:all_0.25s_ease] hover:border-[rgba(99,102,241,0.4)] hover:bg-[#1F2937]">
             <p className="text-base leading-[1.6]">
-              I’m a blockchain engineer specialising in smart contracts, cross-chain communication, and distributed systems.
+              I’m a software engineer with experience across backend systems, full-stack development, algorithms, systems programming, and applied AI, with blockchain engineering as one part of that broader profile.
             </p>
             <p className="mt-4 text-base leading-[1.6]">
-              My work focuses on building secure on-chain logic, designing reliable execution flows, and implementing cryptographic security mechanisms within decentralized applications.
+              My work focuses on building reliable software, designing clear system logic, and solving technical problems across different stacks, from Java and Spring Boot to Python, NLP, and lower-level systems work in C.
             </p>
             <p className="mt-4 text-base leading-[1.6]">
-              I have experience developing smart contracts on Ethereum and Solana, building cross-chain messaging prototypes, and implementing backend services and APIs in production environments.
+              In 2024, I also moved into the web3 space and started contributing there through research, hackathons, and hands-on blockchain engineering work.
+            </p>
+            <p className="mt-4 text-base leading-[1.6]">
+              I have experience implementing backend services and APIs in production environments, building technical academic projects across algorithms and systems, and developing specialized work in blockchain, security, and distributed applications.
             </p>
             <div className="mt-6">
               <h3 className="text-sm font-semibold uppercase tracking-wide text-[#E5E7EB]">Engineering Interests</h3>
@@ -464,7 +526,7 @@ export default function Home() {
       <section className={`${sectionClass} section-tone-a`} id="contact">
         <h2 className="text-[32px] font-bold text-[#E5E7EB]">Contact</h2>
         <p className="mt-4 max-w-3xl text-base leading-[1.6] text-[#9CA3AF]">
-          If you are working on blockchain protocols, smart contract systems, or cross-chain infrastructure and looking for engineers, feel free to reach out.
+          If you are hiring for software engineering roles across backend, full-stack, Python, product engineering, or distributed systems, feel free to reach out.
         </p>
 
         <div className="mt-8 grid gap-8 md:grid-cols-3">
@@ -491,7 +553,7 @@ export default function Home() {
       <footer className="border-t border-[#374151] bg-[#111827]">
         <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-3 px-6 py-8 text-sm text-[#9CA3AF] md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Wiktoria Szitenhelm</p>
-          <p>Blockchain Engineer · Solidity · Rust · Cross-chain Systems</p>
+          <p>Software Engineer · Backend · Full-stack · Distributed Systems</p>
         </div>
       </footer>
     </>
