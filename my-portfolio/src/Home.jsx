@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import profileImage from './assets/hack1.jpg';
+import heroPortrait from './assets/hero-portrait.webp';
 
 const NAV_ITEMS = [
   ['Work', '#work'],
@@ -8,15 +9,28 @@ const NAV_ITEMS = [
 ];
 
 const HIGHLIGHTS = [
-  { value: '50 hrs', label: 'manual work saved every month' },
-  { value: '$22K', label: 'grant secured for WellKey' },
-  { value: '3×', label: 'international hackathons shipped' },
-  { value: '20+', label: 'HR leaders consulted' },
+  { value: '50 hrs', label: 'saved monthly for a family e-commerce business' },
+  { value: '$22K', label: 'grant funding secured to build WellKey' },
+  { value: '3×', label: 'international hackathons, including 2 bounty wins' },
+  { value: '0', label: 'times I gave up when things got difficult' },
 ];
 
 const PROJECTS = [
   {
     index: '01',
+    eyebrow: 'E-commerce · Finance automation',
+    title: 'Accounting Automation',
+    lead: 'An automation that matches Allegro sales with bank transactions, giving a family-run e-commerce business back around 50 hours every month.',
+    details: [
+      'Brings bank transaction and Allegro marketplace data into one repeatable reconciliation flow.',
+      'Matches payments against sales and clearly flags records that need human review.',
+      'Replaced hours of repetitive manual checking with a faster, more reliable process.',
+    ],
+    stack: ['E-commerce', 'Allegro', 'Bank data', 'Reconciliation', 'Validation'],
+    tone: 'acid',
+  },
+  {
+    index: '02',
     eyebrow: 'AI search · Data engineering',
     title: 'home4u',
     lead: 'A real-estate search product that turns messy marketplace listings and natural-language requests into useful, trustworthy results.',
@@ -29,7 +43,7 @@ const PROJECTS = [
     tone: 'mint',
   },
   {
-    index: '02',
+    index: '03',
     eyebrow: 'Product engineering · Responsible AI',
     title: 'WellKey',
     lead: 'A B2B wellbeing platform shaped through direct discovery with HR leaders and built from first conversation to deployed MVP.',
@@ -42,7 +56,7 @@ const PROJECTS = [
     tone: 'lilac',
   },
   {
-    index: '03',
+    index: '04',
     eyebrow: 'Automation · Local-first AI',
     title: 'Gift Suggestion Agent',
     lead: 'A private, webhook-triggered recommendation workflow that grounds ideas in relevant personal context without sending data off-device.',
@@ -57,7 +71,7 @@ const PROJECTS = [
 
 const EXPERIENCE = [
   {
-    period: '2026 — now',
+    period: '2026 - now',
     role: 'Independent Software & AI Engineer',
     company: 'Independent',
     summary:
@@ -69,7 +83,7 @@ const EXPERIENCE = [
     ],
   },
   {
-    period: 'May — Oct 2025',
+    period: 'May 2025 - Jan 2026',
     role: 'Smart Contract Engineer',
     company: 'XSwap',
     summary:
@@ -80,7 +94,7 @@ const EXPERIENCE = [
     ],
   },
   {
-    period: 'Jun 2023 — Jun 2024',
+    period: 'Jun 2023 - Jun 2024',
     role: 'Software Engineer',
     company: 'J.P. Morgan · Glasgow',
     summary:
@@ -157,7 +171,7 @@ export default function Home() {
             <p className="eyebrow"><span className="status-dot" /> Based in Poland · open to remote</p>
             <h1 id="hero-title">I turn complex systems into <em>products that work.</em></h1>
             <p className="hero-intro">
-              I&apos;m Wiktoria, a software &amp; AI engineer who ships reliable applications, AI workflows, and integrations—from early discovery to production.
+              I&apos;m Wiktoria, a software &amp; AI engineer who ships reliable applications, AI workflows, and integrations - from early discovery to production.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#work">See selected work <span>↓</span></a>
@@ -165,13 +179,25 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="hero-note" data-reveal aria-label="Current focus">
-            <span className="note-number">01</span>
-            <div>
-              <p>Currently building</p>
-              <strong>Useful AI products with thoughtful guardrails, dependable data flows, and clean customer experiences.</strong>
+          <div className="hero-side">
+            <div className="hero-sticker" role="img" aria-label="Portrait of Wiktoria Szitenhelm">
+              <span className="sticker-orbit" aria-hidden="true" />
+              <span className="sticker-dot sticker-dot-lime" aria-hidden="true" />
+              <span className="sticker-dot sticker-dot-purple" aria-hidden="true" />
+              <span className="sticker-spark" aria-hidden="true">✦</span>
+              <div className="sticker-art">
+                <img src={heroPortrait} alt="" />
+              </div>
             </div>
-          </aside>
+
+            <aside className="hero-note" data-reveal aria-label="Current focus">
+              <span className="note-number">01</span>
+              <div>
+                <p>Currently building</p>
+                <strong>Useful AI products with thoughtful guardrails, dependable data flows, and clean customer experiences.</strong>
+              </div>
+            </aside>
+          </div>
         </section>
 
         <section className="highlights" aria-label="Career highlights">
@@ -188,7 +214,7 @@ export default function Home() {
         <section className="section shell" id="work">
           <div className="section-heading" data-reveal>
             <p className="eyebrow">Selected work</p>
-            <h2>Built for the messy middle between <em>idea and production.</em></h2>
+            <h2>Software built<br />to solve <em>real business problems.</em></h2>
           </div>
 
           <div className="project-list">
