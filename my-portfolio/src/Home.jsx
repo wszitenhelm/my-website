@@ -21,6 +21,20 @@ const HIGHLIGHTS = [
 const PROJECTS = [
   {
     index: '01',
+    eyebrow: 'Product engineering · Responsible AI',
+    title: 'WellKey',
+    lead: 'A B2B early-warning platform for workforce wellbeing, inspired by my own experience of burnout-like symptoms and shaped through direct discovery with HR leaders.',
+    details: [
+      'Designed anonymous employee check-ins and an aggregated employer dashboard with role-based access.',
+      'Built AI-assisted chat with crisis-language safety guardrails and clear failure handling.',
+      'Owned product, engineering, fundraising, and go-to-market; secured a $22K grant.',
+    ],
+    stack: ['TypeScript', 'Vercel', 'Supabase', 'PostgreSQL', 'Realtime', 'LLMs'],
+    tone: 'lilac',
+    url: WELLKEY_URL,
+  },
+  {
+    index: '02',
     eyebrow: 'AI search · Data engineering',
     title: 'home4u',
     lead: 'More useful, trustworthy real-estate search from messy marketplace data. home4u turns natural-language requests into validated results.',
@@ -33,7 +47,7 @@ const PROJECTS = [
     tone: 'mint',
   },
   {
-    index: '02',
+    index: '03',
     eyebrow: 'E-commerce · Finance automation',
     title: 'Accounting Automation',
     lead: 'Around 50 hours saved every month for a family-run e-commerce business. The automation matches Allegro sales with bank transactions.',
@@ -44,20 +58,6 @@ const PROJECTS = [
     ],
     stack: ['E-commerce', 'Allegro', 'Bank data', 'Reconciliation', 'Validation'],
     tone: 'acid',
-  },
-  {
-    index: '03',
-    eyebrow: 'Product engineering · Responsible AI',
-    title: 'WellKey',
-    lead: 'A B2B early-warning platform for workforce wellbeing, inspired by my own experience of burnout-like symptoms and shaped through direct discovery with HR leaders.',
-    details: [
-      'Designed anonymous employee check-ins and an aggregated employer dashboard with role-based access.',
-      'Built AI-assisted chat with crisis-language safety guardrails and clear failure handling.',
-      'Owned product, engineering, fundraising, and go-to-market; secured a $22K grant.',
-    ],
-    stack: ['TypeScript', 'Vercel', 'Supabase', 'PostgreSQL', 'Realtime', 'LLMs'],
-    tone: 'lilac',
-    url: WELLKEY_URL,
   },
   {
     index: '04',
@@ -172,13 +172,13 @@ export default function Home() {
       <main id="top">
         <section className="hero shell" aria-labelledby="hero-title">
           <div className="hero-copy" data-reveal>
-            <p className="eyebrow"><span className="status-dot" /> Available now · remote · software &amp; AI engineer</p>
-            <h1 id="hero-title">Software and AI engineer. I ship production systems, <em>from first idea to live.</em></h1>
+            <p className="eyebrow"><span className="status-dot" /> Available now · remote</p>
+            <h1 id="hero-title">I ship production systems, <em>from first idea to live.</em></h1>
             <p className="hero-intro">
-              Open to full-time remote roles: software engineer, AI engineer, forward deployed engineer. Ex-J.P. Morgan. I build AI workflows and integrations, and I stay close to the people who use them after launch.
+              Open to full-time remote roles: <strong>Software Engineer, AI Engineer, Forward Deployed Engineer.</strong> Ex-J.P. Morgan. I build AI workflows and integrations, and I stay close to the people who use them after launch.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href={EMAIL_HREF}>Email me <span>↗</span></a>
+              <a className="button button-primary hero-primary-cta" href={EMAIL_HREF}>Email me <span>↗</span></a>
               <a className="button button-secondary" href="/CV.pdf" target="_blank" rel="noreferrer">View CV <span>↗</span></a>
               <a className="hero-tertiary" href={LINKEDIN_URL} target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
             </div>
