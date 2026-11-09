@@ -175,7 +175,7 @@ export default function Home() {
             <p className="eyebrow"><span className="status-dot" /> Available now · remote</p>
             <h1 id="hero-title">I ship production systems, <em>from first idea to live.</em></h1>
             <p className="hero-intro">
-              Open to full-time remote roles: <strong>Software Engineer, AI Engineer, Forward Deployed Engineer.</strong> Ex-J.P. Morgan. I build AI workflows and integrations, and I stay close to the people who use them after launch.
+              Open to full-time remote roles: <strong>Software Engineer, AI Engineer, Forward Deployed Engineer.</strong> Ex-J.P. Morgan. I’m curious, energetic, and always learning. I ask thoughtful questions, pick up new domains quickly, and keep improving what I ship.
             </p>
             <div className="hero-actions">
               <a className="button button-primary hero-primary-cta" href={EMAIL_HREF}>Email me <span>↗</span></a>
