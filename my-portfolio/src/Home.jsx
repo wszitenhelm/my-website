@@ -2,6 +2,10 @@ import { useEffect } from 'react';
 import profileImage from './assets/hack1.jpg';
 import heroPortrait from './assets/hero-portrait.webp';
 
+const EMAIL_HREF = 'mailto:wiktoria.szitenhelm@gmail.com?subject=Role%20at%20your%20company';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/wszitenhelm/';
+const WELLKEY_URL = 'https://wellkey.eu';
+
 const NAV_ITEMS = [
   ['Work', '#work'],
   ['Experience', '#experience'],
@@ -12,28 +16,14 @@ const HIGHLIGHTS = [
   { value: '50 hrs', label: 'saved monthly for a family e-commerce business' },
   { value: '$22K', label: 'grant funding secured to build WellKey' },
   { value: '3×', label: 'international hackathons, including 2 bounty wins' },
-  { value: '0', label: 'times I gave up when things got difficult' },
 ];
 
 const PROJECTS = [
   {
     index: '01',
-    eyebrow: 'E-commerce · Finance automation',
-    title: 'Accounting Automation',
-    lead: 'An automation that matches Allegro sales with bank transactions, giving a family-run e-commerce business back around 50 hours every month.',
-    details: [
-      'Brings bank transaction and Allegro marketplace data into one repeatable reconciliation flow.',
-      'Matches payments against sales and clearly flags records that need human review.',
-      'Replaced hours of repetitive manual checking with a faster, more reliable process.',
-    ],
-    stack: ['E-commerce', 'Allegro', 'Bank data', 'Reconciliation', 'Validation'],
-    tone: 'acid',
-  },
-  {
-    index: '02',
     eyebrow: 'AI search · Data engineering',
     title: 'home4u',
-    lead: 'A real-estate search product that turns messy marketplace listings and natural-language requests into useful, trustworthy results.',
+    lead: 'More useful, trustworthy real-estate search from messy marketplace data. home4u turns natural-language requests into validated results.',
     details: [
       'Built a complete ingestion pipeline with crawling, normalization, quality checks, and scored deduplication.',
       'Added Gemini-powered semantic search with validated structured filters and a non-AI fallback.',
@@ -43,10 +33,23 @@ const PROJECTS = [
     tone: 'mint',
   },
   {
+    index: '02',
+    eyebrow: 'E-commerce · Finance automation',
+    title: 'Accounting Automation',
+    lead: 'Around 50 hours saved every month for a family-run e-commerce business. The automation matches Allegro sales with bank transactions.',
+    details: [
+      'Brings bank transaction and Allegro marketplace data into one repeatable reconciliation flow.',
+      'Matches payments against sales and clearly flags records that need human review.',
+      'Replaced hours of repetitive manual checking with a faster, more reliable process.',
+    ],
+    stack: ['E-commerce', 'Allegro', 'Bank data', 'Reconciliation', 'Validation'],
+    tone: 'acid',
+  },
+  {
     index: '03',
     eyebrow: 'Product engineering · Responsible AI',
     title: 'WellKey',
-    lead: 'A B2B wellbeing platform shaped through direct discovery with HR leaders and built from first conversation to deployed MVP.',
+    lead: 'A B2B early-warning platform for workforce wellbeing, inspired by my own experience of burnout-like symptoms and shaped through direct discovery with HR leaders.',
     details: [
       'Designed anonymous employee check-ins and an aggregated employer dashboard with role-based access.',
       'Built AI-assisted chat with crisis-language safety guardrails and clear failure handling.',
@@ -54,12 +57,13 @@ const PROJECTS = [
     ],
     stack: ['TypeScript', 'Vercel', 'Supabase', 'PostgreSQL', 'Realtime', 'LLMs'],
     tone: 'lilac',
+    url: WELLKEY_URL,
   },
   {
     index: '04',
     eyebrow: 'Automation · Local-first AI',
     title: 'Gift Suggestion Agent',
-    lead: 'A private, webhook-triggered recommendation workflow that grounds ideas in relevant personal context without sending data off-device.',
+    lead: 'Private gift ideas grounded in relevant personal context, without sending data off-device. This webhook-triggered workflow keeps the data local.',
     details: [
       'Built a RAG pipeline using embeddings and vector search to retrieve only relevant context.',
       'Orchestrated the workflow in n8n and generated grounded suggestions through a locally hosted LLM.',
@@ -79,7 +83,7 @@ const EXPERIENCE = [
     bullets: [
       'Built an accounting automation tool that reconciles bank transactions with marketplace sales, saving a family-run e-commerce business around 50 hours each month.',
       'Delivered a WordPress commerce site with newsletter, events, and PayU payment integrations.',
-      'Founded and built WellKey, translating 12+ structured interviews into a deployed, safety-conscious MVP.',
+      'Built WellKey solo: 12+ structured interviews with HR leaders turned into a deployed MVP with role-based access and a safety-checked AI chat.',
     ],
   },
   {
@@ -162,21 +166,23 @@ export default function Home() {
             <a key={href} href={href}>{label}</a>
           ))}
         </nav>
-        <a className="header-contact" href="mailto:wiktoria.szitenhelm@gmail.com">Let&apos;s talk <span>↗</span></a>
+        <a className="header-contact" href={EMAIL_HREF}>Email me <span>↗</span></a>
       </header>
 
       <main id="top">
         <section className="hero shell" aria-labelledby="hero-title">
           <div className="hero-copy" data-reveal>
-            <p className="eyebrow"><span className="status-dot" /> Based in Poland · open to remote</p>
-            <h1 id="hero-title">I turn complex systems into <em>products that work.</em></h1>
+            <p className="eyebrow"><span className="status-dot" /> Available now · remote · software &amp; AI engineer</p>
+            <h1 id="hero-title">Software and AI engineer. I ship production systems, <em>from first idea to live.</em></h1>
             <p className="hero-intro">
-              I&apos;m Wiktoria, a software &amp; AI engineer who ships reliable applications, AI workflows, and integrations - from early discovery to production.
+              Open to full-time remote roles: software engineer, AI engineer, forward deployed engineer. Ex-J.P. Morgan. I build AI workflows and integrations, and I stay close to the people who use them after launch.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#work">See selected work <span>↓</span></a>
+              <a className="button button-primary" href={EMAIL_HREF}>Email me <span>↗</span></a>
               <a className="button button-secondary" href="/CV.pdf" target="_blank" rel="noreferrer">View CV <span>↗</span></a>
+              <a className="hero-tertiary" href={LINKEDIN_URL} target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
             </div>
+            <a className="hero-work-link" href="#work">See selected work <span>↓</span></a>
           </div>
 
           <div className="hero-side">
@@ -193,8 +199,8 @@ export default function Home() {
             <aside className="hero-note" data-reveal aria-label="Current focus">
               <span className="note-number">01</span>
               <div>
-                <p>Currently building</p>
-                <strong>Useful AI products with thoughtful guardrails, dependable data flows, and clean customer experiences.</strong>
+                <p>Recently shipped</p>
+                <strong>Reconciliation automation (50 hrs a month saved), AI real-estate search, and WellKey, a privacy-first B2B product I built solo.</strong>
               </div>
             </aside>
           </div>
@@ -228,6 +234,11 @@ export default function Home() {
                   <ul>
                     {project.details.map((detail) => <li key={detail}>{detail}</li>)}
                   </ul>
+                  {project.url && (
+                    <a className="project-link" href={project.url} target="_blank" rel="noreferrer">
+                      Visit WellKey <span>↗</span>
+                    </a>
+                  )}
                 </div>
                 <div className="project-stack" aria-label={`${project.title} technologies`}>
                   {project.stack.map((item) => <span key={item}>{item}</span>)}
@@ -274,7 +285,7 @@ export default function Home() {
                 My background spans production financial systems, early-stage product building, applied AI, and cross-chain infrastructure. The common thread is making complicated technology understandable and dependable.
               </p>
               <p>
-                I&apos;ve gathered requirements from internal banking teams and HR leaders, mentored students in Python, explained prototypes to hackathon judges, and shipped independently for clients. I&apos;m most useful where engineering judgment and clear communication matter equally.
+                Experiencing burnout-like symptoms in a demanding work environment led me to found WellKey. I&apos;ve since gathered requirements from HR leaders, mentored students in Python, explained prototypes to hackathon judges, and shipped independently for clients. I&apos;m most useful where engineering judgment and clear communication matter equally. I am looking for a full-time remote role where I can ship, own problems end to end and work closely with users.
               </p>
               <div className="education">
                 <span>Education</span>
@@ -320,11 +331,12 @@ export default function Home() {
 
         <section className="contact-section" id="contact">
           <div className="shell contact-inner" data-reveal>
-            <p className="eyebrow">Let&apos;s build something useful</p>
-            <h2>Have a complex problem that needs a <em>clear way forward?</em></h2>
-            <a className="contact-link" href="mailto:wiktoria.szitenhelm@gmail.com">wiktoria.szitenhelm@gmail.com <span>↗</span></a>
+            <p className="eyebrow">Let&apos;s talk</p>
+            <h2>Hiring for a software, AI or <em>forward deployed engineer?</em></h2>
+            <p className="contact-copy">I can start immediately. Email is the fastest way to reach me.</p>
+            <a className="button button-primary contact-button" href={EMAIL_HREF}>Email me <span>↗</span></a>
             <div className="social-links">
-              <a href="https://www.linkedin.com/in/wszitenhelm/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+              <a href={LINKEDIN_URL} target="_blank" rel="noreferrer">LinkedIn ↗</a>
               <a href="https://github.com/wszitenhelm" target="_blank" rel="noreferrer">GitHub ↗</a>
               <a href="/Szitenhelm_Wiktoria.pdf" target="_blank" rel="noreferrer">Dissertation ↗</a>
             </div>
