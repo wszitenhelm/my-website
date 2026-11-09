@@ -166,7 +166,6 @@ export default function Home() {
             <a key={href} href={href}>{label}</a>
           ))}
         </nav>
-        <a className="header-contact" href={EMAIL_HREF}>Email me <span>↗</span></a>
       </header>
 
       <main id="top">
@@ -178,9 +177,11 @@ export default function Home() {
               Open to full-time remote roles: <strong>Software Engineer, AI Engineer, Forward Deployed Engineer.</strong> Ex-J.P. Morgan. I’m curious, energetic, and always learning. I ask thoughtful questions, pick up new domains quickly, and keep improving what I ship.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary hero-primary-cta" href={EMAIL_HREF}>Email me <span>↗</span></a>
-              <a className="button button-secondary" href="/CV.pdf" target="_blank" rel="noreferrer">View CV <span>↗</span></a>
-              <a className="button button-secondary" href={LINKEDIN_URL} target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+              <div className="hero-button-row">
+                <a className="button button-primary hero-primary-cta" href={EMAIL_HREF}>Email me <span>↗</span></a>
+                <a className="button button-secondary" href="/CV.pdf" target="_blank" rel="noreferrer">View CV <span>↗</span></a>
+              </div>
+              <a className="hero-linkedin" href={LINKEDIN_URL} target="_blank" rel="noreferrer">or view LinkedIn profile <span>↗</span></a>
             </div>
           </div>
 
