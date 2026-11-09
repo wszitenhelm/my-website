@@ -180,9 +180,8 @@ export default function Home() {
             <div className="hero-actions">
               <a className="button button-primary hero-primary-cta" href={EMAIL_HREF}>Email me <span>↗</span></a>
               <a className="button button-secondary" href="/CV.pdf" target="_blank" rel="noreferrer">View CV <span>↗</span></a>
-              <a className="hero-tertiary" href={LINKEDIN_URL} target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+              <a className="button button-secondary" href={LINKEDIN_URL} target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
             </div>
-            <a className="hero-work-link" href="#work">See selected work <span>↓</span></a>
           </div>
 
           <div className="hero-side">

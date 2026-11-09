@@ -74,9 +74,6 @@ em { color: #6d46c5; font-weight: 400; }
 .button-secondary:hover { background: white; }
 .hero-primary-cta { min-height: 64px; gap: 40px; padding-inline: 30px; border-color: #6d46c5; background: #6d46c5; font-size: 15px; }
 .hero-primary-cta:hover { border-color: #5834ad; background: #5834ad; }
-.hero-tertiary { display: inline-flex; align-items: center; gap: 9px; padding: 0 8px; font-size: 13px; font-weight: 750; text-decoration: underline; text-underline-offset: 5px; }
-.hero-work-link { display: inline-flex; gap: 9px; margin-top: 22px; color: var(--muted); font-size: 12px; font-weight: 700; text-decoration: underline; text-underline-offset: 5px; }
-.hero-tertiary:hover, .hero-work-link:hover { color: #6d46c5; }
 .hero-side { display: grid; gap: 30px; align-self: end; }
 .hero-sticker {
   position: relative;
@@ -294,7 +291,6 @@ em { color: #6d46c5; font-weight: 400; }
   .hero-intro { margin-top: 26px; font-size: 17px; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .button { justify-content: space-between; }
-  .hero-tertiary { min-height: 44px; padding-inline: 4px; }
   .highlights-grid { width: 100%; grid-template-columns: 1fr; }
   .highlight { min-height: 130px; padding: 22px 16px; }
   .highlight { border-left: 1px solid var(--line); border-bottom: 1px solid var(--line); }
