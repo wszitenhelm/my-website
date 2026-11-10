@@ -70,7 +70,7 @@ em { color: #6d46c5; font-weight: 400; }
 .button-primary { background: var(--ink); color: white; }
 .button-primary:hover { background: var(--green); }
 .button-secondary:hover { background: white; }
-.hero-primary-cta { min-height: 64px; gap: 40px; padding-inline: 30px; border-color: #6d46c5; background: #6d46c5; font-size: 15px; }
+.button.hero-primary-cta { min-height: 64px; justify-content: center; padding-inline: 30px; border-color: #6d46c5; background: #6d46c5; font-size: 15px; }
 .hero-primary-cta:hover { border-color: #5834ad; background: #5834ad; }
 .hero-supporting-links { display: flex; align-items: center; gap: 10px; color: rgba(101, 112, 105, .82); font-size: 13px; font-weight: 650; }
 .hero-supporting-links a { transition: color .2s ease; }

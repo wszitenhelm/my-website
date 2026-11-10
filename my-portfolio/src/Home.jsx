@@ -177,7 +177,7 @@ export default function Home() {
               Open to full-time remote roles: <strong>Software Engineer, AI Engineer, Forward Deployed Engineer.</strong> Ex-J.P. Morgan. I’m curious, energetic, and always learning. I ask thoughtful questions, pick up new domains quickly, and keep improving what I ship.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary hero-primary-cta" href={EMAIL_HREF}>Email me <span>↗</span></a>
+              <a className="button button-primary hero-primary-cta" href={EMAIL_HREF}>Email me</a>
               <div className="hero-supporting-links">
                 <a href="/CV.pdf" target="_blank" rel="noreferrer">View CV <span>↗</span></a>
                 <span aria-hidden="true">•</span>
