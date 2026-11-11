@@ -16,6 +16,7 @@ const HIGHLIGHTS = [
   { value: '50 hrs', label: 'saved monthly for a family e-commerce business' },
   { value: '$22K', label: 'grant funding secured to build WellKey' },
   { value: '3×', label: 'international hackathons, including 2 bounty wins' },
+  { value: '0', label: 'times I gave up when things got difficult' },
 ];
 
 const PROJECTS = [

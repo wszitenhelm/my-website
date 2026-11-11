@@ -166,7 +166,7 @@ em { color: #6d46c5; font-weight: 400; }
 .hero-note strong { font-family: var(--serif); font-size: 19px; font-weight: 400; line-height: 1.4; }
 
 .highlights { border-block: 1px solid var(--line); background: white; }
-.highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.highlights-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .highlight { min-height: 145px; padding: 28px 30px; border-right: 1px solid var(--line); }
 .highlight:first-child { border-left: 1px solid var(--line); }
 .highlight strong { display: block; font-family: var(--serif); font-size: 43px; font-weight: 400; letter-spacing: -.04em; }
